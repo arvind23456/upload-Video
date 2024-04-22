@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "name": "Flutter (lib/view/search_location.dart)",
+            "type": "dart",
+            "request": "launch",
+            "program": "lib/view/search_location.dart"
+        }
+    ]
+}
