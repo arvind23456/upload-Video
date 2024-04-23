@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:upload_flow/utils/icons.dart';
 
 class Category_List extends StatefulWidget {
@@ -14,6 +13,7 @@ class _Category_ListState extends State<Category_List> {
   String? dropdownValue;
 
   List<String> filterlist = [];
+
   bool showCategoryList = false;
 
   String? selectedCategory;
@@ -69,6 +69,7 @@ class _Category_ListState extends State<Category_List> {
                       height: 35,
                       color: Color.fromRGBO(250, 250, 250, 1),
                       child: TextField(
+                        style: TextStyle(fontSize: 20),
                         controller: _controller,
                         onChanged: (value) {
                           searchFilter(value);

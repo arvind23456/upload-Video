@@ -54,23 +54,6 @@ class _Upload_VideoState extends State<Upload_Video> {
     }
   }
 
-  void _pickVideooFromgallery() async {
-    final XFile? videos =
-        await ImagePicker().pickVideo(source: ImageSource.gallery);
-    if (videos != null) {
-      setState(() {
-        postVideo.add(videos);
-        _controller = VideoPlayerController.file(File(videos.path))
-          ..initialize().then((_) {
-            setState(() {});
-            _controller!.play();
-          });
-      });
-    } else {
-      print('no video found');
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Column(
