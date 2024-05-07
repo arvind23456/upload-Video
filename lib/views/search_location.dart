@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Search_Location extends StatefulWidget {
-  const Search_Location({super.key});
+class SearchLocation extends StatefulWidget {
+  const SearchLocation({super.key});
 
   @override
-  State<Search_Location> createState() => _Search_LocationState();
+  State<SearchLocation> createState() => _SearchLocationState();
 }
 
-class _Search_LocationState extends State<Search_Location> {
+class _SearchLocationState extends State<SearchLocation> {
   var arrNames = [
     'Swami Automobiles',
     'RSA Motors',
@@ -24,7 +24,7 @@ class _Search_LocationState extends State<Search_Location> {
 
   var filterList = [];
 
-  void SearchFilter(String value) {
+  void searchFilter(String value) {
     setState(() {
       filterList = arrNames
           .where(
@@ -54,7 +54,7 @@ class _Search_LocationState extends State<Search_Location> {
               child: Container(
                 child: TextField(
                   onChanged: (value) {
-                    SearchFilter(value);
+                    searchFilter(value);
                   },
                   decoration: InputDecoration(
                     filled: true,

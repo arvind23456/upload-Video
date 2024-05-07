@@ -48,7 +48,7 @@ class _Category_ListState extends State<Category_List> {
     return Padding(
       padding: const EdgeInsets.only(bottom: 3),
       child: Container(
-        color: Color.fromRGBO(250, 250, 250, 1),
+        color: const Color.fromRGBO(250, 250, 250, 1),
         child: Column(
           children: [
             Row(
@@ -67,9 +67,9 @@ class _Category_ListState extends State<Category_List> {
                     padding: const EdgeInsets.only(top: 20, left: 15),
                     child: Container(
                       height: 35,
-                      color: Color.fromRGBO(250, 250, 250, 1),
+                      color: const Color.fromRGBO(250, 250, 250, 1),
                       child: TextField(
-                        style: TextStyle(fontSize: 20),
+                        style: const TextStyle(fontSize: 20),
                         controller: _controller,
                         onChanged: (value) {
                           searchFilter(value);
@@ -85,7 +85,7 @@ class _Category_ListState extends State<Category_List> {
                                   },
                                 )
                               : null,
-                          hintStyle: TextStyle(
+                          hintStyle: const TextStyle(
                             color: Color.fromRGBO(130, 127, 127, 1),
                             fontSize: 20,
                             fontWeight: FontWeight.w600,
@@ -102,13 +102,13 @@ class _Category_ListState extends State<Category_List> {
 
               Container(
                 child: ListView.separated(
-                    separatorBuilder: (context, index) => Divider(
+                    separatorBuilder: (context, index) => const Divider(
                           color: Color.fromRGBO(241, 239, 239, 1),
                           height: 0,
                         ),
                     shrinkWrap: true,
                     itemCount: filterlist.length,
-                    physics: ScrollPhysics(),
+                    physics: const ScrollPhysics(),
                     itemBuilder: (context, index) {
                       return ListTile(
                         title: Text(

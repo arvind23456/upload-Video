@@ -25,7 +25,7 @@ class _Search_FriendState extends State<Search_Friend> {
   TextEditingController searchController = TextEditingController();
   bool isSearching = false;
 
-  void SearchFilter(String value) {
+  void searchFilter(String value) {
     setState(() {
       FilterList = Friends.where(
               (element) => element.toLowerCase().contains(value.toLowerCase()))
@@ -69,7 +69,7 @@ class _Search_FriendState extends State<Search_Friend> {
               child: TextField(
                 controller: searchController,
                 onChanged: (value) {
-                  SearchFilter(value);
+                  searchFilter(value);
                 },
                 decoration: InputDecoration(
                   hintText: 'Search for User',
@@ -83,8 +83,8 @@ class _Search_FriendState extends State<Search_Friend> {
                   ),
                   focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(15),
-                      borderSide:
-                          BorderSide(color: Color.fromRGBO(229, 229, 229, 1))),
+                      borderSide: const BorderSide(
+                          color: Color.fromRGBO(229, 229, 229, 1))),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(14),
                     borderSide: const BorderSide(
@@ -96,7 +96,7 @@ class _Search_FriendState extends State<Search_Friend> {
             if (FilterList.isEmpty && isSearching)
               const Center(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 250),
+                  padding: EdgeInsets.only(top: 250),
                   child: Text(
                     'User not found',
                     style: TextStyle(color: Colors.black54, fontSize: 27),

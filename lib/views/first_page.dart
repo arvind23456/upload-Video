@@ -29,7 +29,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: ListView(
         children: const [
           Divider(color: MainScreen.border),
-          Add_Location(),
+          AddLocation(),
           Divider(color: MainScreen.border),
           Add_Friend(),
           Divider(color: MainScreen.border),

@@ -19,7 +19,7 @@ class _Add_FriendState extends State<Add_Friend> {
 
   void showToast() {
     Fluttertoast.showToast(
-        msg: "User already selected", backgroundColor: Colors.black54);
+        msg: "User Already Selected", backgroundColor: Colors.black54);
   }
 
   @override

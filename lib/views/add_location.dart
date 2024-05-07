@@ -3,40 +3,42 @@ import 'package:flutter/material.dart';
 import 'package:upload_flow/utils/icons.dart';
 import 'package:upload_flow/views/search_location.dart';
 
-class Add_Location extends StatefulWidget {
-  const Add_Location({super.key});
+class AddLocation extends StatefulWidget {
+  const AddLocation({super.key});
 
   @override
-  State<Add_Location> createState() => _Add_LocationState();
+  State<AddLocation> createState() => _AddLocationState();
 }
 
-class _Add_LocationState extends State<Add_Location> {
+class _AddLocationState extends State<AddLocation> {
   String? selectedCity;
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: Logoicon.location,
-      title: Align(
-        alignment: Alignment.topLeft,
-        child: TextButton(
-            onPressed: () async {
-              final city = await Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => Search_Location(),
-                  ));
-              setState(() {
-                if (city != null) selectedCity = city;
-                print(selectedCity);
-              });
-            },
-            child: Text(selectedCity ?? 'Add Location',
-                style: TextStyle(
-                  fontSize: 20,
-                  color: selectedCity == null
-                      ? Color.fromRGBO(130, 127, 127, 1)
-                      : Colors.blue,
-                ))),
+    return SizedBox(
+      child: ListTile(
+        leading: Logoicon.location,
+        title: Align(
+          alignment: Alignment.topLeft,
+          child: TextButton(
+              onPressed: () async {
+                final city = await Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const SearchLocation(),
+                    ));
+                setState(() {
+                  if (city != null) selectedCity = city;
+                  print(selectedCity);
+                });
+              },
+              child: Text(selectedCity ?? 'Add Location',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: selectedCity == null
+                        ? const Color.fromRGBO(130, 127, 127, 1)
+                        : Colors.blue,
+                  ))),
+        ),
       ),
     );
   }
