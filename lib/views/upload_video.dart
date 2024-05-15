@@ -63,7 +63,7 @@ class _Upload_VideoState extends State<Upload_Video> {
             height: 220,
             decoration: BoxDecoration(
                 border: Border.all(width: 1, color: MainScreen.border)),
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             child: Stack(
               children: [
                 const Positioned(
@@ -85,7 +85,7 @@ class _Upload_VideoState extends State<Upload_Video> {
             ),
           ),
         if (postVideo.isNotEmpty)
-          Container(
+          SizedBox(
             height: 280,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
@@ -93,7 +93,7 @@ class _Upload_VideoState extends State<Upload_Video> {
               itemCount: postVideo.length,
               itemBuilder: (context, index) {
                 return Center(
-                  child: Container(
+                  child: SizedBox(
                     width: MediaQuery.sizeOf(context).width / 1 - 5,
                     child: Stack(children: [
                       AspectRatio(
